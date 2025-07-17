@@ -1,4 +1,25 @@
+/* ===== plugins e frameworks ===== */
 @import "tailwindcss";
+@plugin "daisyui";
+
+/* ===== fontes ===== */
+
+.montserrat-regular{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.montserrat-medium{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.montserrat-semibold{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/* ===== estilos ===== */
 
 :root {
   --background: #ffffff;
@@ -8,7 +29,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* --font-sans: var(--font-geist-sans); */
+  --font-sans: "Montserrat", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 

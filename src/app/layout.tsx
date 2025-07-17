@@ -1,15 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat-sans",
   subsets: ["latin"],
 });
 
@@ -30,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
-      >
+      <body className={`${montserrat.className} antialiased min-h-screen`}>
         <header>
           <div className="bg-[#111] w-full min-h-[12vh] flex">
             {/* logo */}
@@ -69,8 +62,8 @@ export default function RootLayout({
 
               {/* botoes de login e cadastro */}
               <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
-                <button className="bg-[#fff]">Login</button>
-                <button className="bg-[#fff]">Cadastro</button>
+                <button className="bg-[#fff] text-[#000]">Login</button>
+                <button className="bg-[#fff] text-[#000]">Cadastro</button>
               </div>
             </nav>
           </div>
