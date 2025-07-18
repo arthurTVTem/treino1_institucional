@@ -7,6 +7,7 @@ import Image from "next/image";
 const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -26,11 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased min-h-screen`}>
+      <body
+        className={`${montserrat.className} antialiased min-h-screen w-full`}
+      >
         <header>
           {/* header desktop */}
           <div className="hidden md:block">
-            <div className="bg-[#111] w-full min-h-[12vh] flex">
+            <div className="bg-[#111] w-full min-h-[12vh] flex overflow-hidden">
               {/* logo */}
               <div className="px-[5vw]">
                 <Image
@@ -38,33 +41,47 @@ export default function RootLayout({
                   alt="Logo"
                   width={100}
                   height={100}
-                  className="h-full w-[15vw] mx-auto invert"
+                  className="h-full min-w-[15vw] w-[10vw] mx-auto invert"
                 />
               </div>
               {/* navegação */}
-              <nav className="w-full flex items-">
-                <ul className="flex gap-[5vw] px-[5vw] items-center justify-evenly w-full">
+              <nav className="w-full flex">
+                <ul className="flex gap-[5vw] px-[2.5vw] items-center justify-evenly w-full">
                   <li>
-                    <a className="text-[#fff]">Serviços</a>
+                    <a className="text-[#fff] text-[clamp(1rem, 2vw, 2rem)] hover:text-red-500 transition-colors duration-250">
+                      Serviços
+                    </a>
                   </li>
                   <li>
-                    <a className="text-[#fff]">Projetos</a>
+                    <a className="text-[#fff] text-[clamp(1rem, 2vw, 2rem)] hover:text-red-500 transition-colors duration-250">
+                      Projetos
+                    </a>
                   </li>
                   <li>
-                    <a className="text-[#fff]">Contato</a>
+                    <a className="text-[#fff] text-[clamp(1rem, 2vw, 2rem)] hover:text-red-500 transition-colors duration-250">
+                      Contato
+                    </a>
                   </li>
                   <li>
-                    <a className="text-[#fff]">Carreiras</a>
+                    <a className="text-[#fff] text-[clamp(1rem, 2vw, 2rem)] hover:text-red-500 transition-colors duration-250">
+                      Carreiras
+                    </a>
                   </li>
                   <li>
-                    <a className="text-[#fff]">Quem Somos</a>
+                    <a className="text-[#fff] text-[clamp(1rem, 2vw, 2rem)] hover:text-red-500 transition-colors duration-250">
+                      Sobre
+                    </a>
                   </li>
                 </ul>
 
                 {/* botoes de login e cadastro */}
                 <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
-                  <button className="bg-[#fff] text-[#000]">Login</button>
-                  <button className="bg-[#fff] text-[#000]">Cadastro</button>
+                  <button className="btn rounded-xl bg-[#fff] text-[#000] ${montserrat.className}">
+                    Login
+                  </button>
+                  <button className="btn rounded-xl bg-[#fff] text-[#000] ${montserrat.className}">
+                    Cadastro
+                  </button>
                 </div>
               </nav>
             </div>
@@ -83,7 +100,17 @@ export default function RootLayout({
                 />
               </div>
 
-              <nav></nav>
+              <nav>
+                {/* botoes no extremo direito da tela */}
+                <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
+                  <button className="btn rounded-xl bg-[#fff] text-[#000] ${montserrat.className}">
+                    Login
+                  </button>
+                  <button className="btn rounded-xl bg-[#fff] text-[#000] ${montserrat.className}">
+                    Cadastro
+                  </button>
+                </div>
+              </nav>
             </div>
           </div>
         </header>
