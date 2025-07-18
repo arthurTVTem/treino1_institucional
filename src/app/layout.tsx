@@ -33,7 +33,7 @@ export default function RootLayout({
         <header>
           {/* header desktop */}
           <div className="hidden md:block">
-            <div className="bg-[#111] w-full min-h-[12vh] flex overflow-hidden">
+            <div className="bg-[#111] min-h-[12vh] flex overflow-hidden">
               {/* logo */}
               <div className="px-[5vw]">
                 <Image
@@ -88,9 +88,9 @@ export default function RootLayout({
           </div>
 
           <div className="block md:hidden">
-            <div className="w-full bg-[#111] min-h-[12vh] flex items-center">
+            <div className="w-full bg-[#111] min-h-[10vh] flex items-center">
               {/* logo */}
-              <div className="px-[5vw]">
+              <div className="px-[5vw] w-[50vw]">
                 <Image
                   src="/images/logoShort.svg"
                   alt="Logo"
@@ -100,9 +100,9 @@ export default function RootLayout({
                 />
               </div>
 
-              <nav>
+              <nav className="w-full flex">
                 {/* botoes no extremo direito da tela */}
-                <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
+                <div className="flex w-full gap-[5vw] px-[5vw] items-center justify-end">
                   <button className="btn rounded-xl bg-[#fff] text-[#000] ${montserrat.className}">
                     Login
                   </button>
