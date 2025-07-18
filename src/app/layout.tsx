@@ -1,6 +1,7 @@
+import * as React from "react";
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Montserrat } from "next/font/google";
 import Image from "next/image";
 
 const montserrat = Montserrat({
@@ -27,45 +28,63 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} antialiased min-h-screen`}>
         <header>
-          <div className="bg-[#111] w-full min-h-[12vh] flex">
-            {/* logo */}
-            <div className="px-[5vw]">
-              <Image
-                src="/images/logoLong.svg"
-                alt="Logo"
-                width={100}
-                height={100}
-                className="h-full w-[15vw] mx-auto invert"
-              />
-            </div>
-
-            {/* navegação */}
-
-            <nav className="w-full flex items-">
-              <ul className="flex gap-[5vw] px-[5vw] items-center justify-evenly w-full">
-                <li>
-                  <a className="text-[#fff]">Serviços</a>
-                </li>
-                <li>
-                  <a className="text-[#fff]">Projetos</a>
-                </li>
-                <li>
-                  <a className="text-[#fff]">Contato</a>
-                </li>
-                <li>
-                  <a className="text-[#fff]">Carreiras</a>
-                </li>
-                <li>
-                  <a className="text-[#fff]">Quem Somos</a>
-                </li>
-              </ul>
-
-              {/* botoes de login e cadastro */}
-              <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
-                <button className="bg-[#fff] text-[#000]">Login</button>
-                <button className="bg-[#fff] text-[#000]">Cadastro</button>
+          {/* header desktop */}
+          <div className="hidden md:block">
+            <div className="bg-[#111] w-full min-h-[12vh] flex">
+              {/* logo */}
+              <div className="px-[5vw]">
+                <Image
+                  src="/images/logoLong.svg"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="h-full w-[15vw] mx-auto invert"
+                />
               </div>
-            </nav>
+              {/* navegação */}
+              <nav className="w-full flex items-">
+                <ul className="flex gap-[5vw] px-[5vw] items-center justify-evenly w-full">
+                  <li>
+                    <a className="text-[#fff]">Serviços</a>
+                  </li>
+                  <li>
+                    <a className="text-[#fff]">Projetos</a>
+                  </li>
+                  <li>
+                    <a className="text-[#fff]">Contato</a>
+                  </li>
+                  <li>
+                    <a className="text-[#fff]">Carreiras</a>
+                  </li>
+                  <li>
+                    <a className="text-[#fff]">Quem Somos</a>
+                  </li>
+                </ul>
+
+                {/* botoes de login e cadastro */}
+                <div className="flex gap-[5vw] px-[5vw] items-center justify-evenly">
+                  <button className="bg-[#fff] text-[#000]">Login</button>
+                  <button className="bg-[#fff] text-[#000]">Cadastro</button>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <div className="block md:hidden">
+            <div className="w-full bg-[#111] min-h-[12vh] flex items-center">
+              {/* logo */}
+              <div className="px-[5vw]">
+                <Image
+                  src="/images/logoShort.svg"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="h-full w-auto mx-auto invert"
+                />
+              </div>
+
+              <nav></nav>
+            </div>
           </div>
         </header>
         {children}
